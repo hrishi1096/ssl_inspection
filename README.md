@@ -41,18 +41,20 @@ Now, open a new terminal window and navigate to the same project.
 * Run `python 1_no_cert_test.py`
 * You'll get the expected error, something like:
   ```
-  Error: HTTPSConnectionPool(host='localhost', port=52525): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate (_ssl.c:1129)')))
+  Error: HTTPSConnectionPool(host='localhost', port=52525): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL:
+  CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate (_ssl.c:1129)')))
   ```
 
 ## Scenario 2 - connect successfully by disabling ssl certificate verification
 * Run `python 2_disable_ssl.py`
 * You'll get a successful response with a warning as expected, something like:
-```
-InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  ```
+  InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See:
+  https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
-Response Status Code: 200
-Response Body: WebSocket server is running
-```
+  Response Status Code: 200
+  Response Body: WebSocket server is running
+  ```
   
 ## Scenario 3 - connect successfully by passing in the right certificate
 * Then run `python 3_cert_test.py`
